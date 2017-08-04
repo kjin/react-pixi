@@ -13,7 +13,7 @@ declare module 'react-pixi' {
   export { render, unmountComponentAtNode } from 'react-dom';
 
   export interface ContainerPropsType extends DisplayObjectPropsType {
-    children?: PIXI.DisplayObject[];
+    children?: Object[];
     width?: number;
     height?: number;
   }
@@ -122,7 +122,10 @@ declare module 'react-pixi' {
   }
 
 
-  export type StagePropsType = ContainerPropsType;
+  export interface StagePropsType extends ContainerPropsType {
+    backgroundColor?: number;
+  }
+
   export type DisplayObjectContainerPropsType = ContainerPropsType;
 
   export class Stage extends Component<StagePropsType, any> {}
